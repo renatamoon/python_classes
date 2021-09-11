@@ -38,25 +38,27 @@
 
 #PARTE PRATICAS
 
-# frase = "NOVO PROJETO DE PYTHON SOMENTE HOJE"
-#print(frase[3:9]) - #mostra do caractere 3 até a 8
-# print(frase[2:13:2])
-# print(frase.count("O")) #NO TERMINAL MOSTRA QUE TEM O "O" APARECE 7 VEZES
-# print(len(frase)) #sai que tem 35 caracteres
-# print(frase.replace("PYTHON", "ANDROID"))
-# #UMA STRING É IMUTÁVEL
+frase = "NOVO PROJETO DE PYTHON SOMENTE HOJE"
+
+print(frase[3:9]) #mostra do caractere 3 até a 8
+print(frase[2:13:2])
+print(frase.count("O")) #NO TERMINAL MOSTRA QUE TEM O "O" APARECE 7 VEZES
+print(len(frase)) #sai que tem 35 caracteres
+print(frase.replace("PYTHON", "ANDROID"))
+
+#UMA STRING É IMUTÁVEL
 
 #FUNÇÕES DE VERIFICAÇÃO
 
 
-# frase = "NOVO PROJETO DE PYTHON SOMENTE HOJE"
-# print("CURSO" in frase) #terminal mostra FALSE - porque não existe curso na frase
-# print(frase.lower().find("projeto")) #no terminal mostra 5 - porque começa no caractere numero 5
-# print(frase.split()) #no terminal sai: ['NOVO', 'PROJETO, 'DE' ...]
+frase = "NOVO PROJETO DE PYTHON SOMENTE HOJE"
+print("CURSO" in frase) #terminal mostra FALSE - porque não existe curso na frase
+print(frase.lower().find("projeto")) #no terminal mostra 5 - porque começa no caractere numero 5
+print(frase.split()) #no terminal sai: ['NOVO', 'PROJETO, 'DE' ...]
 
-# dividir = frase.split()
-# print(dividir[1]) #saiu o segundo item da lista que é o PROJETO pois o numero 1 é o segundo item da lista
-# print(dividir[1] [3]) #saiu o terceiro caractere "J" (no caso o 4 porque os caracteres começam pelo 0
+dividir = frase.split()
+print(dividir[1]) #saiu o segundo item da lista que é o PROJETO pois o numero 1 é o segundo item da lista
+print(dividir[1] [3]) #saiu o terceiro caractere "J" (no caso o 4 porque os caracteres começam pelo 0
 
 
 #-----------DESAFIOS
@@ -66,18 +68,18 @@
 #-O NOME COM TODAS AS MINUSCULAS
 #-QUANTAS LETRAS AO TODO (SEM CONSIDERAR ESPAÇOS)
 
-# nome = input(str("digite seu nome inteiro: "))n projects/aula9.py"
+nome = input(str("digite seu nome inteiro: ")) #n projects/aula9.py"
 # DIGITE SEU NOME COMPLETO: renata cardoso monteiro
 # O PRIMEIRO NOME INSERIDO É O:  RENATA CARDOSO MONTEIR
 
-# print(nome.upper())
-# print(nome.lower())
-# print(nome.__len__())
+print(nome.upper())
+print(nome.lower())
+print(nome.__len__())
 
 #QUANTAS LETRAS TEM O PRIMEIRO NOME
 
-# primeiro_nome = input(str("digite seu primeiro nome: "))
-# print(primeiro_nome.__len__())
+primeiro_nome = input(str("digite seu primeiro nome: "))
+print(primeiro_nome.__len__())
 
 
 #23 - FAÇA UM PROGRAMA QUE LEIA UM NUMERO DE 0 A 9999 E MOSTRE CADA UM DOS DIGITOS SEPARADOS
@@ -87,43 +89,42 @@
 #CENTENA: 8
 #MILHAR: 1
 
-# numero = int(input("INFORME UM NUMERO: "))
-# unidade = numero // 1 % 10
-# dezena = numero // 10 % 10
-# centena = numero // 100 % 10
-# milhar =  numero // 1000 % 10
+numero = int(input("INFORME UM NUMERO: "))
+unidade = numero // 1 % 10
+dezena = numero // 10 % 10
+centena = numero // 100 % 10
+milhar =  numero // 1000 % 10
 
-# print("Analisando o número {}".format(numero))
-# print("UNIDADE: {}".format(unidade))
-# print("DEZENA: {}".format(dezena))
-# print("CENTENA: {}".format(centena))
-# print("MILHAR: {}".format(milhar))
+print("Analisando o número {}".format(numero))
+print("UNIDADE: {}".format(unidade))
+print("DEZENA: {}".format(dezena))
+print("CENTENA: {}".format(centena))
+print("MILHAR: {}".format(milhar))
 
 #24 - CRIE UM PROGRAMA QUE LEIA O NOME DE UMA CIDADE E DIGA SE ELA COMEÇA OU NAO COM NOME "SANTO"
 
-# name = str(input("DIGITE O NOME DE UMA CIDADE: "))
-# cont = name.count("santo")
-# print("Quantas vezes aparece o nome SANTO: ", cont)
+name = str(input("DIGITE O NOME DE UMA CIDADE: "))
+cont = name.count("santo")
+print("Quantas vezes aparece o nome SANTO: ", cont)
 
 
 #25 - CRIE UM PROGRAMA QUE LEIA O NOME DE UMA PESSOA E DIGA SE ELA TEM "SILVA" NO NOME
 
-# nome_completo = str(input("DIGITE SEU NOME COMPLETO (em minúsculo)): "))
-# cont = nome_completo.count("silva")
-# print("Quantas vezes aparece o nome SILVA: ", cont)
+nome_completo = str(input("DIGITE SEU NOME COMPLETO (em minúsculo)): "))
+cont = nome_completo.count("silva")
+print("Quantas vezes aparece o nome SILVA: ", cont)
 
 #26 - FAÇA UM PROGRAMA QUE LEIA UMA FRASE PELO TECLADO E MOSTRE:
 #-QUANTAS VEZES APARECE A LETRA A
 #-EM QUE POSIÇÃO ELA APARECE A PRIMEIRA VEZ
 #-EM QUE POSIÇÃO ELA APARECE A ULTIMA VEZ
 
-# phrase = str(input("DIGITE UMA FRASE: ")).lower()
+phrase = str(input("DIGITE UMA FRASE: ")).lower()
+a = phrase.count("a")
 
-# a = phrase.count("a")
-
-# print("Quantas vezes aparece a LETRA A: ", a)
-# print("A letra A aparece quantas vezes? Resposta: " ,phrase.find("a"))
-# print("Em que posição a letra A aparece pela ultima vez? Resposta: " ,phrase.rfind("a")) 
+print("Quantas vezes aparece a LETRA A: ", a)
+print("A letra A aparece quantas vezes? Resposta: " ,phrase.find("a"))
+print("Em que posição a letra A aparece pela ultima vez? Resposta: " ,phrase.rfind("a")) 
 
 #27 - FAÇA UM PROGRAMA QUE LEIA O NOME COMPLETO DE UMA PESSOA, MOSTRANDO EM SEGUIDA O PRIMEIRO E O ULTIMO NOME
 #SEPARADAMENTE.
