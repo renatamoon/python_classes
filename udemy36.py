@@ -74,4 +74,4 @@ print(nova_string)
 
 #outros resultados: 
 # QUAL LETRA QUER TROCAR PARA MAISCULO?--e
-# o rato roEu a roupa do rEi dE roma
+# o rato roEu a roupa do rEi de roma .....

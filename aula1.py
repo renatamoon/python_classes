@@ -1,47 +1,60 @@
-#primeiros comandos em python
+#CONDICÕES
+#WHILE PYTHON - AULA 7
 
-#passos simples no python
+# while True: #looping infinito
+#     nome = input("QUAL O SEU NOME")
+#     print("OLÁ, {}".format(nome))
+#print("não será executada")
 
-print("Olá, Mundo")
-print(7+4)
+# x = 0   #para iniciar a var
+# while x < 10:
+#     if x == 3:
+#         x = x +1
+#         continue #sempre que tiver essa linha ele não executa o bloco de codigos
+#         #caso o x for igual a 3
+#
+#     print(x)
+#     x = x + 1
+# print("ACABOU!")
 
-# USANDO VARIÁVEIS
+#já a palavra break termina o loop, e ai acaba o codigo.
 
-name = "Renata"
-idade = 25
-peso = 58.0
-print(name, idade, peso)
+#---- outro exercicio
+#
+# x = 0
+# y = 0
 
-nome = input("Qual é seu nome? ")
-idade = input ("Quantos anos você tem?")
-peso = input ("Qual é o seu peso?")
+# x < 10:
+        #     while y < 5:
+#         print("X vale {} e Y vale".format(x, y))
+#         y += 1
+#     x += 1 #isso é basicamente igual ao x = x+1
+# print("acabou")
 
-print(nome, idade,peso)
+#***CRIANDO UMA CALCULADORA
 
+while True:
+    print()
+    num1 = input("DIGITE UM NUMERO: ")
+    num2 = input("DIGITE OUTRO NUMERO: ")
+    operador = input("DIGITE UM OPERADOR [+ - / *]: ")
 
-#------------------desafio 1
-#script que leia o nome da pessoa e mostra uma mensagem de boas
-#vindas de acordo com o valor digitado.
+    if not num1.isnumeric() or not num2.isnumeric(): #validação de numero para que
+        #o usuário digite um numero e não um outro tipo de caracter
+        print("você precisa digitar um numero")
+        continue
 
-nome = input("Qual é o seu nome? ")
-print("Boas vindas senhor(a)" ,nome)
+    num1 = int(num1)
+    num2 = int(num2)
 
-#------------------desafio 2
-#crie um script que leia o dia, o mes e o ano de nascimento
-#de uma pessoa e mostre uma mensagem com a data formatada
-
-dia = input("Qual o dia que você nasceu? ")
-mes = input("Qual o mês que você nasceu? ")
-ano = input("Qual o ano que você nasceu? ")
-
-#print("O seu dia de nascimento formatado é " ,dia + " de" ,mes +" de" ,ano)
-
-#------------------desafio 3
-#crie um script que leia dois numeros e tente mostrar a
-#a soma entre eles
-
-num1 = input("Digite um numero ")
-num2 = input("Digite outro numero ")
-soma = int(num1) + int(num2)
-
-print("A soma dos numeros é" ,soma)
+    # + - / *
+    if operador == "+":
+        print("O RESULTADO É: ", num1 + num2)
+    elif operador == "-":
+        print("O RESULTADO É: ", num1 - num2)
+    elif operador == "*":
+        print("O RESULTADO É: ", num1 * num2)
+    elif operador == "/":
+        print("O RESULTADO É: ", num1 / num2)
+    else:
+        print("NÃO HÁ RETORNO PARA A OPERAÇÃO SOLICITADA")
