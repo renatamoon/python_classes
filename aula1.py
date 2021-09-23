@@ -33,28 +33,61 @@
 
 #***CRIANDO UMA CALCULADORA
 
-while True:
-    print()
-    num1 = input("DIGITE UM NUMERO: ")
-    num2 = input("DIGITE OUTRO NUMERO: ")
-    operador = input("DIGITE UM OPERADOR [+ - / *]: ")
+# while True:
+#     print()
+#     num1 = input("DIGITE UM NUMERO: ")
+#     num2 = input("DIGITE OUTRO NUMERO: ")
+#     operador = input("DIGITE UM OPERADOR [+ - / *]: ")
+#
+#     if not num1.isnumeric() or not num2.isnumeric(): #validação de numero para que
+#         #o usuário digite um numero e não um outro tipo de caracter
+#         print("você precisa digitar um numero")
+#         continue
+#
+#     num1 = int(num1)
+#     num2 = int(num2)
+#
+#     # + - / *
+#     if operador == "+":
+#         print("O RESULTADO É: ", num1 + num2)
+#     elif operador == "-":
+#         print("O RESULTADO É: ", num1 - num2)
+#     elif operador == "*":
+#         print("O RESULTADO É: ", num1 * num2)
+#     elif operador == "/":
+#         print("O RESULTADO É: ", num1 / num2)
+#     else:
+#         print("NÃO HÁ RETORNO PARA A OPERAÇÃO SOLICITADA")
+# text = ["p", "y", "t", "h", "o", "n"]
+# text.insert(2, "n")
+# print(text)
 
-    if not num1.isnumeric() or not num2.isnumeric(): #validação de numero para que
-        #o usuário digite um numero e não um outro tipo de caracter
-        print("você precisa digitar um numero")
-        continue
+import string
+cpf = "16899535009" #(CALCULA OS DOIS ULTIMOS DIGITOS DO CPF)
+# for c in string.punctuation:
+#     cpf = cpf.replace(c,"")
+#     print(cpf)
+novo_cpf = cpf[:9] #9 digitos do cpf
+print(novo_cpf)
 
-    num1 = int(num1)
-    num2 = int(num2)
+reverso = 10
 
-    # + - / *
-    if operador == "+":
-        print("O RESULTADO É: ", num1 + num2)
-    elif operador == "-":
-        print("O RESULTADO É: ", num1 - num2)
-    elif operador == "*":
-        print("O RESULTADO É: ", num1 * num2)
-    elif operador == "/":
-        print("O RESULTADO É: ", num1 / num2)
-    else:
-        print("NÃO HÁ RETORNO PARA A OPERAÇÃO SOLICITADA")
+for index in range(19):
+    if index > 8:
+        index -= 9
+
+    print(index)
+
+    if reverso < 2:
+        reverso = 11
+    reverso -= 1 #decrementando a cada volta
+
+
+
+
+
+
+
+
+
+
