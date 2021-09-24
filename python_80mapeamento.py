@@ -34,10 +34,28 @@ from python_80 import produtos, pessoas, lista
 #usando a função map
 #aumentando a idade das pessoas em 20%
 
-nomes = map(lambda p: p['idade'] * 1.20 , pessoas)
+def aumenta_idade(p):                           #2 = duas casas decimais
+    p['nova_idade'] = round(p['idade'] * 1.20, 2)
+    return p
+
+nomes = map(aumenta_idade , pessoas)
 
 for pessoa in nomes:
     print(pessoa)
+
+#EXECUTE:
+# {'nome': 'Luiz', 'idade': 32, 'nova_idade': 38.4}
+# {'nome': 'max', 'idade': 40, 'nova_idade': 48.0}
+# {'nome': 'norma', 'idade': 22, 'nova_idade': 26.4}
+# {'nome': 'felipe', 'idade': 10, 'nova_idade': 12.0}
+# {'nome': 'eduardo', 'idade': 12, 'nova_idade': 14.399999999999999}
+# {'nome': 'pricila', 'idade': 40, 'nova_idade': 48.0}
+# {'nome': 'ana', 'idade': 41, 'nova_idade': 49.199999999999996}
+# {'nome': 'joao', 'idade': 5, 'nova_idade': 6.0}
+# {'nome': 'linda', 'idade': 30, 'nova_idade': 36.0}
+# {'nome': 'amara', 'idade': 22, 'nova_idade': 26.4}
+#
+
 
 
 
