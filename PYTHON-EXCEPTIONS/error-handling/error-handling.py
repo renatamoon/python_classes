@@ -20,5 +20,8 @@ def get_blog(id):
     try:
         blog = jsonify(fetch_blog(id))
         return blog
-    except
+    except NotFoundError:
+        abort(404, description="Resource not found")
+    except NotAuthorizedError:
+        abort(403, description="Access denied")
 app.run()
