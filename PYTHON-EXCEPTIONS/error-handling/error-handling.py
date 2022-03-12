@@ -1,5 +1,6 @@
+import json
 from flask import Flask, jsonify, abort
-from db import fetch_blogs, fetch_blog
+from db import fetch_blogs, fetch_blog, NotFoundError, NotAuthorizedError
 
 app = Flask(__name__)
 
@@ -10,10 +11,14 @@ def main_page():
 
 @app.route("/blogs")
 def all_blogs():
+    # jsonify - allows the app to transform the data to json
     blogs = jsonify(fetch_blogs())
     return blogs
 
 @app.route("/blogs/<id>")
-
-
+def get_blog(id):
+    try:
+        blog = jsonify(fetch_blog(id))
+        return blog
+    except
 app.run()
