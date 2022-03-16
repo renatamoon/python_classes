@@ -59,14 +59,40 @@ class NotFoundError(Exception):
 
 # -------- getting data from a string
 
-bmf_account = "123456"
-region = "BR"
-path_route = "https://stackoverflow.com/questions/4591125"
+# bmf_account = "123456"
+# region = "BR"
+# path_route = "https://stackoverflow.com/questions/4591125"
 
-path = f"{bmf_account}/{region}/{path_route}/"
-print(path)
+# path = f"{bmf_account}/{region}/{path_route}/"
+# print(path)
 
-if bmf_account and region and path_route in path:
-    print("EVERYTHING OK", path)
+# if bmf_account and region and path_route in path:
+#     print("EVERYTHING OK", path)
+# else:
+#     raise NotFoundError("Not Found Error: Data Not Found") 
+
+
+# -------- getting the files
+# files_data = "142353673"
+
+# if not files_data:
+#     raise NotFoundError("NotFoundError: The Data was not Found")
+# print(files_data) 
+
+
+# error handler classes
+
+class NotFoundDataError(Exception):
+
+    @staticmethod
+    def not_found_data():
+        error_response = {"NotFoundError": "Data Not Found"}
+        return error_response
+
+balance = ""
+
+
+if not balance:
+    raise NotFoundError({"NotFoundError": "Data Not Found"})
 else:
-    raise NotFoundError("Not Found Error: Data Not Found") 
+    print({'balance': balance})
