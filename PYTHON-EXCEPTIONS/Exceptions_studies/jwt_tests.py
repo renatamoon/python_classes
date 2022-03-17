@@ -78,8 +78,8 @@ nested_dictionary = {
                                 'nick_name': 'RAST3', 
                                     'portfolios': 
                                         {'br': 
-                                            {'bovespa_account': '000000049-9',
-                                             'bmf_account': '49'}, 
+                                            {'bovespa_account': "000000049-9",
+                                             'bmf_account': ""}, 
                                         'us': {'_': None}}, 
                                             'client_has_br_trade_allowed': False, 
                                             'client_has_us_trade_allowed': False, 
@@ -90,8 +90,6 @@ nested_dictionary = {
 
 # a = list(NestedDictValues(nested_dictionary))
 # b = deepcopy(a)
-
-
 
 
 # test = set(["bovespa_account", "bmf_account"])
@@ -140,19 +138,72 @@ nested_dictionary = {
 
 # ----------------- flatten dictionary
 
-def flatten(mydict):
-  new_dict = {}
-  for key,value in mydict.items():
-    if type(value) == dict:
-      _dict = {':'.join([key, _key]):_value for _key, _value in flatten(value).items()}
-      new_dict.update(_dict)
-    else:
-      new_dict[key]=value
-  return new_dict
+# def flatten(mydict):
+#   new_dict = {}
+#   for key,value in mydict.items():
+#     if type(value) == dict:
+#       _dict = {':'.join([key, _key]):_value for _key, _value in flatten(value).items()}
+#       new_dict.update(_dict)
+#     else:
+#       new_dict[key]=value
+#   return new_dict
 
 
-flat_dict = flatten(nested_dictionary)
+# flat_dict = flatten(nested_dictionary)
 # print(flat_dict)
 
-print(flat_dict['decoded_jwt:user:portfolios:br:bovespa_account'])
-print(flat_dict['decoded_jwt:user:portfolios:br:bmf_account'])
+# print(flat_dict['decoded_jwt:user:portfolios:br:bovespa_account'])
+# print(flat_dict['decoded_jwt:user:portfolios:br:bmf_account'])
+
+
+# ---------------- recursion
+
+# decoded_jwt:user:portfolios:br:bovespa_account
+
+def get(d,l):
+    if len(l)==1: return d[l[0]]
+    return get(d[l[0]],l[1:])
+
+maplist_bovespa = ["decoded_jwt", "user", "portfolios", "br", "bovespa_account"]
+maplist_bmf = ["decoded_jwt", "user", "portfolios", "br", "bmf_account"]
+data_bovespa = get(nested_dictionary, maplist_bovespa)
+data_bmf = get(nested_dictionary, maplist_bmf)
+
+
+print(bool(data_bovespa))
+print(bool(data_bmf))
+
+if data_bovespa and data_bmf:
+    print("THE JWT IS VALID xx")   
+    print(data_bmf, data_bovespa)  
+     
+else:    
+    print(data_bmf, data_bovespa)
+    print("THE JWT SENT ISN'T RIGHT, TRY AGAIN")
+    
+
+    # error
+# print(jwt_content['decoded_jwt'])
+
+
+
+# async def verify_jwt_token_by_string(jwt: str) -> Union[Exception, dict]:
+#     jwt_content, XXXXXXXX = await XXXXXXXX.decode_payload(jwt=jwt)
+#     # TODO: Utilizar Heimdall.validate_jwt_integrity a fim de verificar os
+#     #  campos da chave "user" do jwt (em caso geral ou por endpoint)
+#     jwt_content_resp = deepcopy(jwt_content)
+
+#     maplist_bovespa = ["decoded_jwt", "user", "portfolios", "br", "bovespa_account"]
+#     maplist_bmf = ["decoded_jwt", "user", "portfolios", "br", "bmf_account"]
+#     data_bovespa = get_value(jwt_content_resp, maplist_bovespa)
+#     data_bmf = get_value(jwt_content_resp, maplist_bmf)
+
+#     print("xxxxxxxxxxx", jwt_content)
+#     print("yyyyyyyyyyyyy", XXXXXXXX)
+
+#     print(data_bovespa)
+#     print(data_bmf)
+
+#     # TODO: Utilizar XXXXXXXX para tratamento de erros relacionados
+#     #  ao decode do jwt
+#     return jwt_content['decoded_jwt']
