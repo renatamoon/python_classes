@@ -79,7 +79,7 @@ nested_dictionary = {
                                     'portfolios': 
                                         {'br': 
                                             {'bovespa_account': "000000049-9",
-                                             'bmf_account': ""}, 
+                                             'bmf_account': "49"}, 
                                         'us': {'_': None}}, 
                                             'client_has_br_trade_allowed': False, 
                                             'client_has_us_trade_allowed': False, 
@@ -136,6 +136,9 @@ nested_dictionary = {
 # y = 11382018
 
 
+dictionary = {'is_payload_decoded': True, 'decoded_jwt': {'exp': 1676674120, 'created_at': 1645138120.078503, 'scope': {'view_type': 'default', 'features': ['default', 'realtime']}, 'user': {'unique_id': '978ce263-e18f-4520-9d87-9bf4f70528d9', 'nick_name': 'RASTA3'}}, 'message': 'Jwt decoded'}
+
+
 # ----------------- flatten dictionary
 
 # def flatten(mydict):
@@ -149,37 +152,43 @@ nested_dictionary = {
 #   return new_dict
 
 
-# flat_dict = flatten(nested_dictionary)
+# flat_dict = flatten(dictionary)
 # print(flat_dict)
 
-# print(flat_dict['decoded_jwt:user:portfolios:br:bovespa_account'])
+# print(flat_dict['decoded_jwt:user:unique_id'])
 # print(flat_dict['decoded_jwt:user:portfolios:br:bmf_account'])
 
+
+# ----------------
+
+return_jwt = {'jwt_integrity': True, 'missing_fields': [], 'message': 'Jwt righteous'}
+
+print(return_jwt["jwt_integrity"])
 
 # ---------------- recursion
 
 # decoded_jwt:user:portfolios:br:bovespa_account
 
-def get(d,l):
-    if len(l)==1: return d[l[0]]
-    return get(d[l[0]],l[1:])
+# def get(d,l):
+#     if len(l)==1: return d[l[0]]
+#     return get(d[l[0]],l[1:])
 
-maplist_bovespa = ["decoded_jwt", "user", "portfolios", "br", "bovespa_account"]
-maplist_bmf = ["decoded_jwt", "user", "portfolios", "br", "bmf_account"]
-data_bovespa = get(nested_dictionary, maplist_bovespa)
-data_bmf = get(nested_dictionary, maplist_bmf)
+# maplist_bovespa = ["decoded_jwt", "user", "portfolios", "br", "bovespa_account"]
+# maplist_bmf = ["decoded_jwt", "user", "portfolios", "br", "bmf_account"]
+# data_bovespa = get(nested_dictionary, maplist_bovespa)
+# data_bmf = get(nested_dictionary, maplist_bmf)
 
 
-print(bool(data_bovespa))
-print(bool(data_bmf))
+# print(bool(data_bovespa))
+# print(bool(data_bmf))
 
-if data_bovespa and data_bmf:
-    print("THE JWT IS VALID xx")   
-    print(data_bmf, data_bovespa)  
+# if data_bovespa and data_bmf:
+#     print("THE JWT IS VALID xx")   
+#     print(data_bmf, data_bovespa)  
      
-else:    
-    print(data_bmf, data_bovespa)
-    print("THE JWT SENT ISN'T RIGHT, TRY AGAIN")
+# else:    
+#     print(data_bmf, data_bovespa)
+#     print("THE JWT SENT ISN'T RIGHT, TRY AGAIN")
     
 
     # error
