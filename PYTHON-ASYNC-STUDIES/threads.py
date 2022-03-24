@@ -60,17 +60,36 @@ import asyncio
 
 # ------------- examples
 
-async def hello(i):
-    print(f"hello {i} STARTED")
-    await asyncio.sleep(4)
-    print(f"hello {i} DONE")
+# async def hello(i):
+#     print(f"hello {i} STARTED")
+#     await asyncio.sleep(4)
+#     print(f"hello {i} DONE")
+
+
+# async def main():
+#     task1 = asyncio.create_task(hello(1))
+#     await asyncio.sleep(3)
+#     task2 = asyncio.create_task(hello(2))
+#     await task1
+#     await task2
+
+# asyncio.run(main()) # here's the main loop
+
+# ----------------
+
+async def count():
+    print("Um")
+    await asyncio.sleep(1)
+    print("Dois")
 
 
 async def main():
-    task1 = asyncio.create_task(hello(1))
-    await asyncio.sleep(3)
-    task2 = asyncio.create_task(hello(2))
-    await task1
-    await task2
+    await asyncio.gather(count(), count(), count())
 
-asyncio.run(main()) # here's the main loop
+
+if __name__ == "__main__":
+    import time
+    s = time.perf_counter()
+    asyncio.run(main())
+    elapsed = time.perf_counter() - s
+    print(f"{__file__} executed in {elapsed: 0.2f} seconds.")
