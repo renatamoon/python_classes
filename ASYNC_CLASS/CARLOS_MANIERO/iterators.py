@@ -12,3 +12,8 @@ print("=-"*20)
 dados = lancar_dados(2)
 print("ROLANDO DADO - RESULTADO: ", dados) # ROLANDO DADO - RESULTADO:  [3, 4]
 
+
+# ------ retornando iterator dos dados que eu acabei de lançar
+
+iterator = iter(dados)
+print("ITERATOR: ", iterator)
