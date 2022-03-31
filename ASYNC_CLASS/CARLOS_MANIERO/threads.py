@@ -61,4 +61,9 @@ assert contador == max_for * 2
 TEMPO DE EXECUÇÃO SERIAL:  1.8621747493743896
 """
 
-# Quando vemos o contador: CONTADOR:  13750960 - 
+# Quando vemos o contador: CONTADOR:  13750960
+
+# Quando usamos paralelimos e usando lock para aguardar a outra thread ser feita:
+
+"""TEMPO DE EXECUÇÃO SERIAL:  10.649341821670532
+CONTADOR:  20000000"""
