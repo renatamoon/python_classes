@@ -16,5 +16,5 @@ def lancar_dados(n):
 
 # iterador para receber os numeros dos dados
 for dado in lancar_dados(10):
-    sleep(1)
+    # sleep(1)
     print("ROLANDO DADO - RESULTADO ... ", dado)
