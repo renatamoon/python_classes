@@ -22,8 +22,8 @@ friends_new = ["Rolf", "Bob", "Jen", "Anne"]
 time_since_seen = [3, 7, 15, 11]
 
 long_timers = {
-    friends[i]: time_since_seen[i] # i = index
-    for i in range(len(friends))
+    friends_new[i]: time_since_seen[i] # i = index
+    for i in range(len(friends_new))
 }
 
 print("TIME: ", long_timers) #  {'Rolf': 3, 'Ruth': 7, 'Charlie': 15, 'Jen': 11}
@@ -31,8 +31,8 @@ print("TIME: ", long_timers) #  {'Rolf': 3, 'Ruth': 7, 'Charlie': 15, 'Jen': 11}
 # with conditional included
 
 long_timers_since = {
-    friends[i]: time_since_seen[i] # i = index
-    for i in range(len(friends))
+    friends_new[i]: time_since_seen[i] # i = index
+    for i in range(len(friends_new))
     if time_since_seen[i] > 5
 }
 print("USING CONDITIONAL: ", long_timers_since) # {'Ruth': 7, 'Charlie': 15, 'Jen': 11}
