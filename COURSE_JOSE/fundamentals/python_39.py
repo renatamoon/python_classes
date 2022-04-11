@@ -35,6 +35,8 @@ print("FRIENDS INTERSECTION: ", friends_lower_set.intersection(guests_lower_set)
 # USING LIST COMPREHENSION
 
 present_list = [
-    name.title() for name in guests if name.lower() in friends_lower
+    name.title() 
+    for name in guests
+    if name.lower() in friends_lower
 ]
 print("PRESENT LIST: ", present_list) # ['Rolf', 'Charlie']
