@@ -49,6 +49,10 @@ class Dog:
     breed: str
     age: int
     
+    def __str__(self):
+        # this helps you to print the objects easily
+        return f'{self.name}, {self.breed} {self.age}'
+    
 
 animal1 = Dog("Harry", "Labrador", 12)
 animal2 = Dog("Justin", "Golden", 5)
@@ -56,6 +60,8 @@ animal3 = Dog("Selena", "Bulldog", 2)
 
 print(id(animal1)) # 140458151013488
 print(id(animal2)) # 140458150614688
+print(animal1)
+print(animal2)
 print(animal3) # Dog(name='Selena', breed='Bulldog', age=2)
 print(animal3 == animal2) # False
 print(animal1>animal2)
