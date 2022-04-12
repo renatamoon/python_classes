@@ -4,8 +4,8 @@
         "subtitle": "The Two Towers",
         "author": "J R R Tolken",
         "publisher": "The British Book Academy",
-        "isbn_10": "0753554386",
-        "isn_13": "978-0753554386",
+        "isbn_10": "8576082675",
+        "isn_13": "978-8576082675",
         "price": 14.20
     },
     {
@@ -13,8 +13,8 @@
         "subtitle": "",
         "author": "Gylian Flynn",
         "publisher": "Virginia Book",
-        "isbn_10": "0202052476",
-        "isn_13": "978-0202052476",
+        "isbn_10": "8580573807",
+        "isn_13": "978-8580573807",
         "price": 12.40
     },
     {
@@ -22,8 +22,8 @@
         "subtitle": "The Return of The King",
         "author": "J R R Tolken",
         "publisher": "The British Book Academy",
-        "isbn_10": "1020305040",
-        "isn_13": "978-1020305040",
+        "isbn_10": "8565907007",
+        "isn_13": "978-8565907007",
         "price": 32.10
     },
     {
@@ -31,8 +31,8 @@
         "subtitle": "The Fellowship of the Rings",
         "author": "J R R Tolken",
         "publisher": "The British Book Academy",
-        "isbn_10": "1234289404",
-        "isn_13": "978-1234289404",
+        "isbn_10": "8594540787",
+        "isn_13": "978-8594540787",
         "price": 25.30
     },
     {
@@ -40,8 +40,8 @@
         "subtitle": "",
         "author": "Gylian Flynn",
         "publisher": "The British Book Academy",
-        "isbn_10": "5678904567",
-        "isn_13": "978-5678904567",
+        "isbn_10": "8532519474",
+        "isn_13": "978-8532519474",
         "price": 23.24
     }
 ]

@@ -1,8 +1,12 @@
 import json
+from turtle import title
 from typing import List
 from pydantic import BaseModel
 from typing import Optional
 import pydantic
+import tkinter as TK
+import tkinter
+import _tkinter
 
 # ------------ raising exception
 
@@ -15,6 +19,13 @@ class ISBNFormatError(Exception):
         super().__init__(message)
 
 
+class ISBNMissingError(Exception):
+    """Custom error that is raised when ISBN or ISBN13 are missing"""
+    def __init__(self, title: str, message: str) -> None:
+        self.title = title
+        self.message = message
+        super().__init__(message)
+
 # ------------ Book Model
 
 class Book(BaseModel):
@@ -26,24 +37,39 @@ class Book(BaseModel):
     isbn_13: Optional[str]
     subtitle: Optional[str]
     
+    @pydantic.root_validator(pre=True)
+    @classmethod
+    def check_isbn10_or_ibsn_13(cls, values):
+        """Make sure there is either an isbn10 or isbn13 value defined"""
+        if "isbn_10" not in values and "isbn_13" not in values:
+            raise ISBNMissingError(
+                title=values["title"], 
+                message="Document should have either ISBN10 or ISBN13"
+                                   )
+        return values  
+    
     # using the decorators and validators to validate the isbn numbers
     @pydantic.validator("isbn_10")
     @classmethod
-    def isbn_10_validator(cls, value):
+    def isbn_10_validator(cls, value) -> None:
         """ISBN 10 validor to check if the ISBN 10 is 10 digits and if it's divisible by 10"""
         chars = [c for c in value if c in "0123456789Xx"]
-        if len(chars != 10):
+        if len(chars) != 10:
             raise ISBNFormatError(value=value, message="ISBN 10 should be 10 digits")
         
         def char_to_int(char: str) -> int:
             if char in "Xx":
                 return 10
             return int(char)
+        
         weighted_sum = sum((10 - i) * char_to_int(x) for i, x in enumerate(chars))
         if weighted_sum % 11 != 0:
             raise ISBNFormatError(value=value, message="ISBN 10 digit sum should be divisible by 11")
         return value
-
+      
+      
+class Config:
+    """Pydantic config class"""
 
 # ------------ Main Function
 def main() -> None:
@@ -56,6 +82,7 @@ def main() -> None:
         books: List[Book] = [Book(**item) for item in data]
         print(books[0])
         print(books[0].title)
+        print(books[0].dict(exclude={"price"}))
         
         # print(data[0]) # printing the first book
         # print(data[0]["title"]) # printing the first title
@@ -63,3 +90,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+    
