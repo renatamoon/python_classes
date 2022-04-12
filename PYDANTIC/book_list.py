@@ -30,6 +30,7 @@ class Book(BaseModel):
     @pydantic.validator("isbn_10")
     @classmethod
     def isbn_10_validator(cls, value):
+        """ISBN 10 validor to check if the ISBN 10 is 10 digits and if it's divisible by 10"""
         chars = [c for c in value if c in "0123456789Xx"]
         if len(chars != 10):
             raise ISBNFormatError(value=value, message="ISBN 10 should be 10 digits")
