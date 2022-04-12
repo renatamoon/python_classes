@@ -1,0 +1,47 @@
+[
+    {
+        "title": "Lord of the Rings",
+        "subtitle": "The Two Towers",
+        "author": "J R R Tolken",
+        "publisher": "The British Book Academy",
+        "isbn_10": "0753554386",
+        "isn_13": "978-0753554386",
+        "price": 14.20
+    },
+    {
+        "title": "Gone Girl",
+        "subtitle": "",
+        "author": "Gylian Flynn",
+        "publisher": "Virginia Book",
+        "isbn_10": "0202052476",
+        "isn_13": "978-0202052476",
+        "price": 12.40
+    },
+    {
+        "title": "Lord of the Rings",
+        "subtitle": "The Return of The King",
+        "author": "J R R Tolken",
+        "publisher": "The British Book Academy",
+        "isbn_10": "1020305040",
+        "isn_13": "978-1020305040",
+        "price": 32.10
+    },
+    {
+        "title": "Lord of the Rings",
+        "subtitle": "The Fellowship of the Rings",
+        "author": "J R R Tolken",
+        "publisher": "The British Book Academy",
+        "isbn_10": "1234289404",
+        "isn_13": "978-1234289404",
+        "price": 25.30
+    },
+    {
+        "title": "Sharp Objects",
+        "subtitle": "",
+        "author": "Gylian Flynn",
+        "publisher": "The British Book Academy",
+        "isbn_10": "5678904567",
+        "isn_13": "978-5678904567",
+        "price": 23.24
+    }
+]
