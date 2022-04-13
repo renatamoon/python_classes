@@ -78,3 +78,20 @@ Hyundai Creta does 66.66666666666667 miles per gallon
 Chevrolet Camaro does 406.25 miles per gallon
 Renault Sandero does 25.454545454545453 miles per gallon
 Mercedes S3 does 20.0 miles per gallon """
+
+print("-="*20)
+
+# remeber that if you put return on the function before the end of the statement, it will never
+# run cause it will always terminate ther function on the return.
+
+def divide(x, y):
+    if y == 0:
+        return "You tried to devide by zero"
+    else:
+        return x / y
+
+calc = divide(10, 2)
+print(calc) # 5.0
+
+calc2 = divide(5, 0)
+print(calc2) # You tried to devide by zero
