@@ -1,0 +1,3 @@
+# INTRODUCTION TO ERRORS IN PYTHON
+
+print(my_variable)
