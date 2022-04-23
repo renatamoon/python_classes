@@ -1,3 +1,6 @@
+from signal import raise_signal
+
+
 class User:
     def __init__(self, name, engagement):
         self.name = name
@@ -12,6 +15,10 @@ def get_user_score(user):
         return perform_calculation(user.engagement_metrics)
     except KeyError:
         print('Incorrect values were provided to our calculation function')
+    else:
+        if user.score > 500:
+            send_engagement_notification(user)
+
 
 def perform_calculation(metrics):
     return metrics['clicks'] * 5 + metrics['hits'] * 2
