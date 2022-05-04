@@ -1,3 +1,5 @@
-import file_operations
+from utils.file_operations import save_to_file, read_file
 
-file_operations.save_to_file('Rolf', 'date.txt')
+save_to_file('Rolf', 'date.txt')
+
+read_file('date.txt')
