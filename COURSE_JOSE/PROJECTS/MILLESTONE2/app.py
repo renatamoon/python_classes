@@ -1,5 +1,11 @@
 from utils import database
 
+# implement the functions bellow
+# def prompt_add_book() -> ask for book name and author
+# def list_books() -> show all the books in our list
+# def prompt_read_book() -> ask for book name and change it to 'read' in our list
+# def prompt_delete_book() -> ask for book name and remove book from list
+
 USER_CHOICE = """
 Enter:
 - 'a' to add a new book
@@ -18,25 +24,10 @@ def print_book(book):
     print(f"Read: {book['read'].value()}")
 
 
-# function to list all books on the database
-def list_all_movies_on_the_database():
-    for book in database.books:
-        print_book(book)
-
-
 # function to add a book at the database
 def add_book(name, author):
     database.books.append({'name': name, 'author': author, 'read': False})
 
-
-# function to mark a book as read
-def read_book():
-    pass
-
-
-# function to delete a book on the database
-def delete_book():
-    pass
 
 
 def menu():
@@ -56,10 +47,26 @@ def menu():
         
         user_input = input(USER_CHOICE)
 
-# def prompt_add_book() -> ask for book name and author
-# def list_books() -> show all the books in our list
-# def prompt_read_book() -> ask for book name and change it to 'read' in our list
-# def prompt_delete_book() -> ask for book name and remove book from list
+
+# function to list all books on the database
+def list_all_movies_on_the_database():
+    books = database.get_all_books()
+    for book in books:
+        print_book(book)
+
+
+# function to mark a book as read
+def read_book():
+    name = input('ENTER THE NAME OF THE BOOK YOU JUST FINISHED READING: ')
+
+    database.mark_book_as_read(name)
+
+
+# function to delete a book on the database
+def delete_book():
+    name = input("Enter the name of the book you wish to delete: ")
+
+    database.delete_book_from_database(name)
 
 
 if __name__ == "__main__":
