@@ -17,19 +17,6 @@ Enter:
 YOUR CHOICE: """
 
 
-# function to get the details of a book at the database
-def print_book(book):
-    print(f"Name: {book['name']}")
-    print(f"Author: {book['author']}")
-    print(f"Read: {book['read'].value()}")
-
-
-# function to add a book at the database
-def add_book(name, author):
-    database.books.append({'name': name, 'author': author, 'read': False})
-
-
-
 def menu():
     user_input = input(USER_CHOICE)
 
@@ -48,11 +35,19 @@ def menu():
         user_input = input(USER_CHOICE)
 
 
+# function to add a book
+def add_book():
+    name = input('Enter the new book name: ')
+    author = input('Enter the new book author: ')
+
+    database.add_book(name, author)
+
+
 # function to list all books on the database
 def list_all_movies_on_the_database():
     books = database.get_all_books()
     for book in books:
-        print_book(book)
+        print_book(f"{book['name']} by {book['author']}, read: {book['read']}")
 
 
 # function to mark a book as read

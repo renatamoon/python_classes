@@ -25,6 +25,7 @@ def delete_book_from_database(name):
     # for book in books:
     #     if book['name'] == name:
     #         books.remove(book)
+    
     global books
 
-    books_new = [book for book in books if book['name'] != name]
+    books = [book for book in books if book['name'] != name]
