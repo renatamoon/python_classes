@@ -34,12 +34,33 @@ def read_book():
     pass
 
 
+# function to delete a book on the database
+def delete_book():
+    pass
+
+
 def menu():
     user_input = input(USER_CHOICE)
+
     while user_input != 'q':
+        if user_input == 'a':
+            add_book()
+        elif user_input ==  'l':
+            list_all_movies_on_the_database()
+        elif user_input == 'r':
+            read_book()
+        elif user_input =='d':
+            delete_book()
+        else:
+            print("Unknown command. Please try again!")
         
+        user_input = input(USER_CHOICE)
 
 # def prompt_add_book() -> ask for book name and author
 # def list_books() -> show all the books in our list
 # def prompt_read_book() -> ask for book name and change it to 'read' in our list
 # def prompt_delete_book() -> ask for book name and remove book from list
+
+
+if __name__ == "__main__":
+    menu()
