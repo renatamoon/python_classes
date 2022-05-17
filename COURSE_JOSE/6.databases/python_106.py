@@ -8,4 +8,5 @@ we can read data easily.
 - COMMIT - save the resul of this query to disk,
 - keep a bunch of data in memory until we commit
 - write multiple things together, which is faster
+
 """
