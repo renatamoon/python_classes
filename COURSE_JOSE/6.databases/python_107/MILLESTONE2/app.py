@@ -24,11 +24,11 @@ def menu():
     while user_input != 'q':
         if user_input == 'a':
             add_book()
-        elif user_input ==  'l':
+        elif user_input == 'l':
             list_all_movies_on_the_database()
         elif user_input == 'r':
             read_book()
-        elif user_input =='d':
+        elif user_input == 'd':
             delete_book()
         else:
             print("Unknown command. Please try again!")
@@ -48,7 +48,7 @@ def add_book():
 def list_all_movies_on_the_database():
     books = database.get_all_books()
     for book in books:
-        print_book(f"{book['name']} by {book['author']}, read: {book['read']}")
+        print(f"{book['name']} by {book['author']}, read: {book['read']}")
 
 
 # function to mark a book as read

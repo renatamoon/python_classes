@@ -5,7 +5,7 @@ book_file = 'books.json'
 
 
 # creating the table on database
-def create_book_table(name, author):
+def create_book_table():
     connection = sqlite3.connect('data.db')
     cursor = connection.cursor()
 
