@@ -42,22 +42,23 @@ def get_all_books():
     return books_response
 
 
-# update the people table
-
-
 # mark a book as read
 def mark_book_as_read(name):
-    for book in books:
-        if book['name'] == name:
-            book['read'] = True
+    connection = sqlite3.connect('data.db')
+    cursor = connection.cursor()
+
+    cursor.execute('UPDATE books SET read=1 WHERE name=?', (name,))
+
+    connection.commit()
+    connection.close()
 
 
 # delete book from database
 def delete_book_from_database(name):
-    # for book in books:
-    #     if book['name'] == name:
-    #         books.remove(book)
-    
-    global books
+    connection = sqlite3.connect('data.db')
+    cursor = connection.cursor()
 
-    books = [book for book in books if book['name'] != name]
+    cursor.execute('DELETE FROM books WHERE name=?', (name, ))
+
+    connection.commit()
+    connection.close()
