@@ -26,7 +26,7 @@ long_timers = {
     for i in range(len(friends_new))
 }
 
-print("TIME: ", long_timers) #  {'Rolf': 3, 'Ruth': 7, 'Charlie': 15, 'Jen': 11}
+print("TIME: ", long_timers) #  {'Rolf': 3, 'Ruth': 7.advanced_built_ins, 'Charlie': 15, 'Jen': 11}
 
 # with conditional included
 
@@ -35,4 +35,4 @@ long_timers_since = {
     for i in range(len(friends_new))
     if time_since_seen[i] > 5
 }
-print("USING CONDITIONAL: ", long_timers_since) # {'Ruth': 7, 'Charlie': 15, 'Jen': 11}
+print("USING CONDITIONAL: ", long_timers_since) # {'Ruth': 7.advanced_built_ins, 'Charlie': 15, 'Jen': 11}
