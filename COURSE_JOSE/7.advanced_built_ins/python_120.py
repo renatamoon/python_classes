@@ -26,3 +26,7 @@ def hundred_numbers_with_yield():
 generator = hundred_numbers_with_yield()
 print(next(generator))  # printing the first generator which is 1
 print(next(generator))  # printing the second number of the generator which is 2
+
+my_range_obj = range(10)
+print("RANGE: ", my_range_obj)  # isn't a generator that allows you to iterate - RANGE:  range(0, 10)
+print(list(generator))
