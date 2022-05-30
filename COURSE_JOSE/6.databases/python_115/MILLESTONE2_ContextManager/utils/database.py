@@ -1,9 +1,11 @@
 """CONCERNED WITH STORING AND RETRIEVING BOOKS FROM A LIST"""
 from database_connection import DatabaseConnection
 
+Book = Dict(str, Union(str, int))
+
 
 # creating the table on database
-def create_book_table():
+def create_book_table() -> None:
     with DatabaseConnection('data.db') as connection:
         cursor = connection.cursor()
 
@@ -11,7 +13,7 @@ def create_book_table():
 
 
 # add book on the database
-def add_book(name, author):
+def add_book(name, author) -> None:
     with DatabaseConnection('data.db') as connection:
         cursor = connection.cursor()
 
@@ -19,7 +21,7 @@ def add_book(name, author):
 
 
 # list all books on the database
-def get_all_books():
+def get_all_books() -> None:
     with DatabaseConnection('data.db') as connection:
         cursor = connection.cursor()
 
@@ -35,7 +37,7 @@ def get_all_books():
 
 
 # mark a book as read
-def mark_book_as_read(name):
+def mark_book_as_read(name) -> None:
     with DatabaseConnection('data.db') as connection:
         cursor = connection.cursor()
 
@@ -43,7 +45,7 @@ def mark_book_as_read(name):
 
 
 # delete book from database
-def delete_book_from_database(name):
+def delete_book_from_database(name) -> None:
     with DatabaseConnection('data.db') as connection:
         cursor = connection.cursor()
 
